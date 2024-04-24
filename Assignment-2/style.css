@@ -1,0 +1,169 @@
+.main-container{
+    /* display: flex;
+    justify-content: center; */
+    padding: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+}
+
+.row{
+    
+    
+    display: flex;
+    justify-content: center;
+   
+    
+    
+    
+}
+
+.firsthalf{
+    height: 40px;
+    background-color: red;
+    width: 50%;
+    
+}
+
+.secondhalf{
+    height: 40px;
+    background-color: blue;
+    width: 50%;
+}
+
+.firsthalf-2{
+    height: 40px;
+    background-color: green;
+    width: 95%;
+   
+}
+
+.secondhalf-2{
+    height: 40px;
+    background-color: blue;
+    width: 5%;
+}
+
+.firsthalf-3{
+    height: 40px;
+    background-color: red;
+    width: 5%;
+    /* height: 40px; */
+    align-items: center;
+    text-align: center;
+} 
+
+.secondhalf-3{
+    height: 40px;
+    background-color: green;
+    width: 90%;
+}
+
+.thirdhalf-3{
+    height: 40px;
+    background-color: blue;
+    width: 5%;
+}
+
+.firsthalf-4{
+    height: 40px;
+    background-color: red;
+    width: 95%;
+    
+}
+
+.secondhalf-4{
+    height: 40px;
+    background-color: blue;
+    width: 5%;
+}
+
+.firsthalf-5{
+    height: 40px;
+    background-color: green;
+    width: 100%;
+   
+}
+
+.secondhalf-5{
+    margin-top: 5px;
+    height: 25px;
+    background-color: red;
+    width: 1.5%;
+}
+
+.firsthalf-6{
+    height: 40px;
+    background-color: red;
+    width: 100%;
+    
+}
+
+.secondhalf-6{
+    height: 40px;
+    background-color: blue;
+    width: 3%;
+}
+
+.firsthalf-7{
+    height: 40px;
+    background-color: red;
+    width: 5%;
+    
+} 
+
+.secondhalf-7{
+    height: 40px;
+    background-color: green;
+    width: 95%;
+}
+
+.thirdhalf-7{
+    margin-top: 13px;
+    height: 10px;
+    background-color: blue;
+    
+}
+
+
+.firsthalf-8{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    background-color: green;
+    width: 100%;
+    
+}
+
+.secondhalf-8{
+    height: 40px;
+    background-color: yellow;
+    width: 5%;
+}
+
+.firsthalf-9{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    background-color: yellow;
+    width: 100%;
+    
+}
+
+.secondhalf-9{
+    height: 40px;
+    background-color: green;
+    width: 1.5%;
+}
+
+.secondhalf-start-9{
+    height: 40px;
+    background-color: yellow;
+    width: 2%;
+}
+
+.secondhalf-end-9{
+    height: 40px;
+    background-color: yellow;
+    width: 2%;
+}
