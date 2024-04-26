@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .main-container{
+            margin-left: 430px;
+            margin-right: 430px;
+
+        }
+
+       .registration-container{
+        display: flex; 
+        justify-content: center;
+       }
+       .registration-txt{
+        text-decoration: underline;
+       }
+
+       .img-form-container{
+        display: flex;
+        width: 1500px;
+        /* justify-content: space-between; */
+
+
+       }
+
+       .form-container{
+        /* display: block;  */
+        margin-left: 40px; 
+        /* display: flex;  */
+        margin-top: 50px;
+       }
+
+    </style>
+
+
+</head>
+<body>
+    <div style="display:flex; justify-content: center;">
+        <h1>Assignment-3</h1>
+    </div>
+    <hr>
+    <div class="main-container">
+        <div class="registration-container">
+            <h2 class="registration-txt">Regitration Form</h2>
+        </div>
+        <br><br><br>
+        <div class="img-form-container">
+            
+                <img style="height: 400px;" src="sunbeam-img.png" alt="">
+            
+            <div class="form-container">
+                
+                    <form class="form">
+                        <span >First name: <input id="nameId" style="width: 250px; margin-left: 5px;" type="text" id="name" placeholder="Enter your Name Here.." ></span>
+                        <label style="color: red;" class="span1" id="nameValid"></label>
+                        <br><br>
+                        <label for="lname">Birth Date :</label>
+                        <input id="dateId" style="width: 250px; margin-left: 3px;"type="date" placeholder="Choose your Date :"  >
+                        <label style="color: red;" class="span1" id="dateValid"></label>
+                        <br><br>
+                        <label for="lname">Email :</label>
+                        <input style="width: 250px; margin-left: 32px;"type="email" id="emailId" placeholder="Enter your email :" >
+                        <label style="color: red;" class="span1" id="mailValid"></label>
+                        <br><br>
+                        <label for="lname">Password :</label>
+                        <input style="width: 250px; margin-left: 10px;"type="password" id="passid" placeholder="enter Password:" >
+                        <label style="color: red;" class="span1" id="passValid"></label>
+                        <br><br>
+                        <label for="">Address</label>
+    
+                        <select id="state-selectId" style="height: 25px; margin-left: 30px;" name="State" id="">
+                            <Option  style="width: 70px;">State</Option>
+                            <Option  style="width: 70px;">Maharashtra</Option>
+                            <Option  style="width: 70px;">Telangana</Option>
+                            <Option  style="width: 70px;">Uttar Pradesh</Option>
+                        </select>
+                        
+
+                        <select id="district-selectId" style="height: 25px; margin-left: 30px;" name="State" >
+                            <Option style="width: 70px;">District</Option>
+                            <Option style="width: 70px;">Pune</Option>
+                            <Option style="width: 70px;">Hyderabad</Option>
+                            <Option style="width: 70px;">Mumbai</Option>
+                            <Option style="width: 70px;">Praygraj</Option>
+                        </select>
+
+
+                        <select id="city-selectId" style="height: 25px; margin-left: 30px;" name="State" id="">
+                            <Option style="width: 70px;">City</Option>
+                            <Option style="width: 70px;">Pune</Option>
+                            <Option style="width: 70px;">Hyderabad</Option>
+                            <Option style="width: 70px;">Mumbai</Option>
+                            <Option style="width: 70px;">Prayagraj</Option>
+                        </select>
+
+                        <label style="color: red;" class="span1" id="locationValid"></label>
+
+                        <br><br>
+                        <label style="margin-right: 29px;" for="">Gender</label>
+                        <input type="radio" name="gender"><Span>Male</Span>
+                        <input type="radio" name="gender"><Span>Female</Span>
+                        <input type="radio" name="gender"><Span>Others</Span>
+                        
+
+                        <br><br>
+                        
+                        
+                            <Span>Upload Photo :</Span><input style="margin-left: 40px;" type="file" name="">
+                        
+                        <br><br>
+                        <label for="">Select your course :</label>
+                        <select style="height: 25px; margin-left: 30px;" name="State" id="">
+                            <Option style="width: 70px;">Select Your Course :   </Option>
+                            <Option style="width: 70px;">PG-DAC</Option>
+                            <Option style="width: 70px;">PG-DMC</Option>
+                            <Option style="width: 70px;">PG-DBDA</Option>
+                            <Option style="width: 70px;">PG-DITISS</Option>
+                        </select>
+
+                        <br><br>  
+
+                        <div>
+                
+                            <button style="height: 25px; width: 120px;" onclick="clickAction()" id="regbutton" type="submit">Register</button>
+                            <button style="height: 25px; width: 120px;" id="clearbutton"type="submit">Clear</button>
+                        
+                        </div>
+                    </form>
+                    
+            </div>
+            
+        </div>
+        
+    </div>
+    <script>
+        let nameVar = document.getElementById("nameId");
+        let validspan = document.getElementById("nameValid");
+        let emailVar=document.getElementById("emailId");
+        let validMail = document.getElementById("mailValid")
+        let dateEL = document.getElementById("dateId")
+        let validDate = document.getElementById("dateValid")
+        let passEl = document.getElementById("passid")
+        let validPass = document.getElementById("passValid")
+        let stateEl = document.getElementById("state-selectId")
+        let districtEl = document.getElementById("district-selectId");
+        let cityEl = document.getElementById("city-selectId");
+        let validLocation = document.getElementById("locationValid")
+
+        
+        
+        nameValid.textContent= "";
+        validDate.textContent = "";
+        validMail.textContent = "";
+        validPass.textContent = "";
+        validLocation.textContent = "";
+
+        function clickAction(){
+            if(nameVar.value == "" && dateEL.value == "" && emailVar.value == "" && passEl.value == ""
+                     
+        ){
+                nameValid.textContent = "Textbox cannot be Empty";
+                validDate.textContent = "Enter Date";
+                validMail.textContent = "Enter the mail";
+                validPass.textContent = "Password is Required !!";
+                
+            }
+            else{
+                nameValid.textContent = "";
+                validDate.textContent = "";
+                validMail.textContent = "";
+                validPass.textContent = "";
+                
+
+
+                console.log(nameVar.value);
+                console.log(dateEL.value);
+                console.log(emailVar.value);
+                console.log(passEl.value);
+                
+            }
+
+            if(stateEl.value == "State"){
+                validLocation.textContent = "Select the State Correctly !!";
+            }
+            else{
+                validLocation.textContent = "";
+                console.log(stateEl.value);
+            }
+
+
+            if(districtEl.value == "District"){
+                validLocation.textContent += "Select the District Correctly !!";
+            }
+            else{
+                validLocation.textContent += "";
+                console.log(districtEl.value);
+            }
+
+
+            if(cityEl.value == "City"){
+                validLocation.textContent += "Select the City Correctly !!";
+            }
+            else{
+                validLocation.textContent += "";
+                console.log(cityEl.value);
+            }
+            
+        }
+
+        // function validate(){
+            
+        // }
+    </script>
+</body>
+</html>
