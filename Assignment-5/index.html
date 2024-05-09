@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CAR INSURANCE</title>
+  </head>
+  <body>
+    <div style="height: 100px; width: 100px; position: absolute; top: 35px" id="box">
+      <img src="car.png" height="70px" width="200px" />
+    </div>
+    <div
+      style="
+        height: 30px;
+        width: 800px;
+        background-color: gray;
+        position: absolute;
+        left: 10px;
+        top: 100px;
+      "
+    ></div>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <br /><br />
+
+    <input class="buttons" type="button" value="START" onclick="start()" />
+    <input class="buttons" type="button" value="STOP" onclick="stop()" />
+
+    <script>
+      var reftodivBox = document.getElementById("box");
+      var counter = 0;
+      var tilt = 0;
+      var queno;
+      var tiltQueue;
+
+      var queueNoArray = [];
+
+      function start() {
+        queno = window.setInterval(keepCounting, 10);
+        console.log("The queue no is " + queno);
+        queueNoArray.push(queno);
+      }
+
+      function stop() {
+        var queno = queueNoArray.pop();
+        window.clearInterval(queno);
+        console.log("The queue no " + queno + " is cleared");
+      }
+
+      function keepCounting() {
+        counter = counter + 1;
+
+        if (counter < 800) {
+          reftodivBox.style.marginLeft = counter + "px";
+        } else {
+          if(tilt > 500 )
+          {
+            window.alert("Get A Car Insurance NIGGA!");
+          }
+          tilt = tilt + 1;
+          reftodivBox.style.marginTop = tilt + "px";
+          reftodivBox.style.transform = "rotate(" + (counter -800) + "deg)";
+        }
+      }
+    </script>
+  </body>
+</html>
