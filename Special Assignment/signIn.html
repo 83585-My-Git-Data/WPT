@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="display: flex; justify-content: center; margin-top: 200px;">
+            <div class="signinBox" style="height: 400px; width: 600px; border: 2px solid black;">
+                <div class="input-container d-flex flex-row justify-content-center" style="align-items: center;" >
+                    <center>
+                        <div style="align-items: center;">
+                            <br>
+                            <h2>Please Sign In </h2>
+                            <br>
+                            <input  id="uid" type="text" class="form-control" placeholder="Enter Username" style="width:250px;">
+                            <br>
+                            <input id="upass" type="password" class="form-control" placeholder="Enter Password" style="width:250px;">
+                            <br>
+                            <button class="btn btn-primary form-control" style="width: 130px;" onclick="getData()">Sign In</button> 
+
+                        </div>
+                    </center> 
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script>
+        function getData(){
+            let uidel = document.getElementById("uid").value;
+            let upassel = document.getElementById("upass").value; 
+            if(uidel == ""){
+                alert("Please Enter Username");
+            }
+            else if(upassel == ""){
+                alert("Please Enter Password");
+            }
+            else if(uidel == "sachin" && upassel == "sachin123"){
+                sessionStorage.setItem("username",uidel);
+                sessionStorage.setItem("password",upassel);
+                window.location.href = "cart.html";    
+            } 
+            else {
+                alert("Invalid Credentials");
+            }
+            
+        }
+
+    </script>
+
+</body>
+</html>

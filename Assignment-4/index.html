@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <center>
+        <h1>Assignment-4</h1>
+    </center> 
+
+    <hr> 
+    <br><br>
+    <br><br> 
+    <center>
+        <h1>Calculator</h1>
+
+        <br><br><br> 
+
+        Enter the 1st Number : <input id="finput" type="text" style="margin: 10px;">
+        <br>
+        Enter the 2nd Number : <input id="sinput" type="text" style="margin: 10px;">
+
+        <br><br> 
+
+        <div>
+            <h3 id="result-div"></h3>
+        </div>
+
+        <br><br><br><br><br>
+
+        <button id="add-button" onclick="addition()">Add</button>
+        <button id="sub-button"onclick="subtraction()">Subtract</button>
+        <button id="mult-button" onclick="multiplication()">Multiply</button>
+        <button id="division-but" onclick="division()">Divide</button>
+    </center> 
+
+
+    <script>
+        // let finel = document.getElementById("finput").value;
+        // let sinel = document.getElementById("sinput").value;
+        let resultel = document.getElementById("result-div")
+
+        addition = function(){
+            let finel = document.getElementById("finput").value;
+            let sinel = document.getElementById("sinput").value;
+            if(sinel == ''){
+                alert('Please enter a number');
+            }
+            else{
+                var addition = parseFloat(finel) + parseFloat(sinel);
+                
+                resultel.innerHTML = "Additon is : "+addition;
+                
+            }
+        }
+        subtraction = function(){
+            let finel = document.getElementById("finput").value;
+            let sinel = document.getElementById("sinput").value;
+            if(sinel == ''){
+                alert('Please enter a number');
+            }
+            else{
+                var addition = parseFloat(finel) - parseFloat(sinel);
+                
+                resultel.innerHTML = "Subtraction is : "+addition;
+                
+            }
+        }
+        multiplication = function(){
+            let finel = document.getElementById("finput").value;
+            let sinel = document.getElementById("sinput").value;
+            if(sinel == ''){
+                alert('Please enter a number');
+            }
+            else{
+                var addition = parseFloat(finel) * parseFloat(sinel);
+                
+                resultel.innerHTML = "Multiplication is : "+addition;
+                
+            }
+        }
+        division = function(){
+            let finel = document.getElementById("finput").value;
+            let sinel = document.getElementById("sinput").value;
+            if(sinel == ''){
+                alert('Please enter a number');
+            }
+            else if(sinel == 0){
+                alert("Denominator cannot be Zero !!! ")
+            }
+            else{
+                var addition = parseFloat(finel) / parseFloat(sinel); 
+                resultel.innerHTML = "Division is : "+addition;
+            }
+        }
+    </script>
+
+    
+</body>
+</html>

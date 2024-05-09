@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+<body>
+
+    
+<div>
+    <div class="container-fluid">
+        <div class="row">
+            <div >
+                <div class="nav-bar" style=" color: black; display: flex; justify-content: space-between; padding-left: 20px; padding-right: 20px;">
+                    <div id="greeting" class="greet"></div>
+                    <button class="btn btn-danger" style="height: 40px; margin-top: 10px;" onclick="signOut()"><b>Sign-Out</b></button>
+                    <button class="btn btn-info" style="height: 40px; margin-top: 10px; color: black;" onclick="getData()" ><b>Get Data</b></button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+            <div class="row">
+                <div style=" width: 100%; border: 2px solid black;">
+                <section class="section" style=" width: 100%; display: flex; justify-content: space-between; ">
+                    <div class="menu-container" style=" margin-top: 40px; margin-left: 80px; ">
+                        <h3>Menu</h3>
+                        <table class="table" id="tableId" style="border: 1px solid black; width: 500px; height: 350px; ">
+                            
+                                <!-- <td>Sr.NO</td>
+                                <td> Image<img src="" alt=""></td>
+                                <td>Item</td>
+                                <td>Price</td> -->
+                            
+                        </table>
+                    </div>
+
+                    <div class="invoice-container" style=" margin-top: 40px; margin-right: 80px; padding: 30px;" >
+                        <h3>Menu</h3>
+                        <table class="table" style="border: 1px solid black; width: 300px; height: 350px;   ">
+                            <tr>
+                                <td>Sr.NO</td>
+                                <td>Item</td>
+                                <td>Price</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        
+    
+</div>
+    
+    
+
+    <script>
+        let greetel = document.getElementById("greeting");
+        let name = sessionStorage.getItem("username");
+        let state = `<h2>Welcome !!! ${name}</h2>`;
+        greetel.innerHTML = state;
+
+        function signOut(){
+            sessionStorage.clear();
+            location.href="signIn.html";
+        }
+
+        function getData(){
+           
+            var helper = new XMLHttpRequest();
+            helper.onreadystatechange = function(){
+                if(helper.readyState == 4 && helper.status == 200){
+                    let data = JSON.parse(helper.responseText);
+
+                    let tableElement = document.getElementById("tableId");
+                    tableElement.innerHTML = "";
+
+                    for(let i=0; i<data.length; i++){
+                        let row = `<tr>
+                            <td>${data[i].itemNo}</td>
+                            <td><img src="${data[i].image}" height="100px" width="100px" /></td>
+                            <td>${data[i].itemName}</td>
+                            <td>${data[i].price}</td>
+                            <td><button type="button" class="btn btn-primary onclick="addtocart(${data[i].itemNo})" ">Add To Cart</button></td>         
+                            </tr>` 
+                            tableElement.innerHTML += row;
+                            
+                    }
+
+                            
+            } 
+    
+        }
+            helper.open("GET","data.json");
+            helper.send();
+           
+            function addtocart(itemNo){
+                debugger;
+                // let srno = data[i].itemNo;
+                // console.log(srno);
+                console.log(data[i].itemNo);
+            }
+    }
+
+    </script>
+    
+</body>
+</html>

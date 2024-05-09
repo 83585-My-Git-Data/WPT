@@ -1,0 +1,6 @@
+[
+    {"itemNo" : 1 , "image":"padapav-pic.jpg", "itemName" : "Vadapav","price": 20 },
+    {"itemNo" : 2 , "image":"dabeli.jpg", "itemName" : "Dabeli","price": 30 },
+    {"itemNo" : 3 , "image":"panipuri.jpg", "itemName" : "Pani-Puri","price": 40 },
+    {"itemNo" : 4 , "image":"kachori.jpg", "itemName" : "kachori", "price": 50 }
+]
